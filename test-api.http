@@ -1,0 +1,52 @@
+GET http://localhost:3000/
+### 🔐 Connexion chauffeur
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "success.mindset@hotmail.com",
+  "motDePasse": "Papapino322603509"
+}
+
+###
+
+### 🚘 Créer un trajet
+POST http://localhost:3000/api/trajets
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWYxZmZkM2YzNjgzNTZiNTFkOWVmMCIsInJvbGUiOiJjaGF1ZmZldXIiLCJpYXQiOjE3NDM3MjQ3ODksImV4cCI6MTc0NDMyOTU4OX0.rHyxdkJYlOtNPSsuHO-MNSKCpiC4EGIQgAmzOGNQUpw
+
+{
+  "depart": "Cayenne",
+  "destination": "Kourou",
+  "date": "2025-04-10T08:00:00.000Z",
+  "places": 3
+}
+
+###
+
+### 📌 Réserver un trajet
+POST http://localhost:3000/api/trajets/67ef3e689c659a889a33f904/reserver
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWYxZmZkM2YzNjgzNTZiNTFkOWVmMCIsInJvbGUiOiJjaGF1ZmZldXIiLCJpYXQiOjE3NDM3MjQ3ODksImV4cCI6MTc0NDMyOTU4OX0.rHyxdkJYlOtNPSsuHO-MNSKCpiC4EGIQgAmzOGNQUpw
+
+###
+
+### ❌ Supprimer un trajet
+DELETE http://localhost:3000/api/trajets/67ef3e689c659a889a33f904
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWYxZmZkM2YzNjgzNTZiNTFkOWVmMCIsInJvbGUiOiJjaGF1ZmZldXIiLCJpYXQiOjE3NDM3MjQ3ODksImV4cCI6MTc0NDMyOTU4OX0.rHyxdkJYlOtNPSsuHO-MNSKCpiC4EGIQgAmzOGNQUpw
+
+###
+
+### 👀 Voir tous les trajets disponibles
+GET http://localhost:3000/api/trajets
+
+###
+
+### 📋 Voir les trajets réservés
+GET http://localhost:3000/api/trajets/reserves
+
+###
+
+### 👤 Voir mes trajets (chauffeur)
+GET http://localhost:3000/api/trajets/mes-trajets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWYxZmZkM2YzNjgzNTZiNTFkOWVmMCIsInJvbGUiOiJjaGF1ZmZldXIiLCJpYXQiOjE3NDM3MjQ3ODksImV4cCI6MTc0NDMyOTU4OX0.rHyxdkJYlOtNPSsuHO-MNSKCpiC4EGIQgAmzOGNQUpw
